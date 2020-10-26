@@ -1,0 +1,37 @@
+{
+
+
+Console.WriteLine("GISSA DET HEMLIGA TALET"); //Rubrik
+
+Random randomerare = new Random();
+int slump_tal = randomerare.Next(1, 101);
+
+
+Console.WriteLine("Gissa på ett tal mellan 1-100"); // Här gissar användaren på sitt tal
+string str = Console.ReadLine();
+int tal = Convert.ToInt32(str); //Omvandlar string som användaren skriver till en int
+
+while (tal != slump_tal) //så länge som det gisssade talet är skillt från slump talet vill jag att while skall köra en loop
+{
+if (tal < slump_tal)
+{
+Console.WriteLine("Gissa på ett högre tal"); //om talet är lägre än slump talet skrivs detta ut som hjälp
+str = Console.ReadLine(); //Vi lägger till så att det inmatade talet skrivs ut
+tal = Convert.ToInt32(str); // och här gör vi om string till en int för att det skall passa i påståendet
+}
+
+else if (tal > slump_tal)
+{
+Console.WriteLine("Gissa på ett lägre tal");
+str = Console.ReadLine();
+tal = Convert.ToInt32(str);
+}
+}
+
+if (tal == slump_tal)
+{
+Console.WriteLine("GRATTIS, Du gissade rätt!");
+
+}
+
+Console.ReadLine();
